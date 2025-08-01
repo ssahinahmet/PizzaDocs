@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Renk Değişkenleri --- */
+:root {
+  --vp-c-brand: #8b5cf6; /* Tailwind purple-500 */
+  --vp-c-brand-light: #a78bfa;
+  --vp-c-brand-dark: #7c3aed;
+}
+
+/* --- Genel Body Stili --- */
+body {
+  @apply bg-gradient-to-b from-gray-900 via-gray-950 to-black text-gray-200 leading-relaxed;
+  font-family: 'Inter', sans-serif;
+}
+
+/* --- Başlıklar --- */
+.markdown h1 {
+  @apply text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 mt-10 mb-4;
+}
+
+.markdown h2 {
+  @apply text-2xl font-semibold text-purple-300 mt-8 mb-3;
+}
+
+/* --- Paragraflar --- */
+.markdown p {
+  color: #d1d5db; /* Tailwind gray-300 */
+  font-size: 0.875rem; /* text-sm */
+  @apply my-3;
+}
+
+/* --- Kod Blokları --- */
+.markdown pre {
+  @apply bg-gray-900 text-green-300 rounded-xl shadow-inner px-4 py-2 overflow-x-auto;
+  position: relative;
+  margin-top: 1rem;
+}
+
+.markdown pre::before {
+  content: '';
+  display: block;
+  height: 1.25rem;
+  background: linear-gradient(to right, #e66465, #9198e5);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+
+/* --- Özel Blok Başlıklarını Gizle --- */
+.custom-block-title {
+  display: none !important;
+}
+
+/* --- İpucu (TIP) Bloku --- */
+.custom-block.tip {
+  background-color: #dcfce7; /* green-100 */
+  color: #166534; /* green-800 */
+  @apply p-4 rounded-lg border-l-4 border-green-500;
+}
+
+.dark .custom-block.tip {
+  background-color: #052e16; /* green-900 */
+  color: #bbf7d0; /* green-200 */
+}
+
+/* --- Uyarı (WARNING) Bloku --- */
+.custom-block.warning {
+  background-color: #fef9c3; /* yellow-100 */
+  color: #92400e; /* yellow-800 */
+  @apply p-4 rounded-lg border-l-4 border-yellow-500;
+}
+
+.dark .custom-block.warning {
+  background-color: #422006; /* yellow-900 */
+  color: #fef08a; /* yellow-200 */
+}
+
+/* --- Tehlike (DANGER) Bloku --- */
+.custom-block.danger {
+  background-color: #fee2e2; /* red-100 */
+  color: #991b1b; /* red-800 */
+  @apply p-4 rounded-lg border-l-4 border-red-500;
+}
+
+.dark .custom-block.danger {
+  background-color: #450a0a; /* red-900 */
+  color: #fecaca; /* red-200 */
+}
+
+/* --- Buton Stili --- */
+a.button {
+  @apply bg-purple-600 text-white px-4 py-2 rounded-full font-semibold shadow-lg hover:bg-purple-700 transition;
+}
+
+/* --- Cam Ekran (Glass) Efekti --- */
+.glass {
+  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  @apply p-6;
+}
+
+/* --- Mobil Uyumluluk --- */
+@media (max-width: 768px) {
+  .markdown h1 {
+    @apply text-2xl;
+  }
+  .markdown p {
+    @apply text-base;
+  }
+}
+
+/* --- Sayfa Geçişleri için Fade Animasyonu --- */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}
+.fade-enter-to, .fade-leave-from {
+  opacity: 1;
+}
+
