@@ -23,7 +23,7 @@ export default {
       {
         text: 'LoomTracker',
         items: [
-          { text: 'Readme', link: '/loomtracker/' }
+          { text: 'Readme', link: '/loomtracker/readme' }
         ]
       }
     ]
